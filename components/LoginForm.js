@@ -1,3 +1,5 @@
+import { loginUser } from '../lib/auth';
+
 
 class LoginForm extends React.Component {
     state = {
@@ -8,8 +10,10 @@ class LoginForm extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     };
     handleSubmit = event => {
+        const { email, password } = this.state;
         event.preventDefault();
         console.log(this.state);
+        loginUser(email, password);
     };
     render() {
         return (
