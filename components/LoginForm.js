@@ -1,6 +1,5 @@
-import react, { Component } from 'React';
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
     state = {
         email: '',
         password: ''
@@ -10,7 +9,7 @@ class LoginForm extends Component {
     };
     handleSubmit = event => {
         event.preventDefault();
-        console.log(state);
+        console.log(this.state);
     };
     render() {
         return (
