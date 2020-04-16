@@ -3,8 +3,8 @@ import { loginUser } from '../lib/auth';
 
 class LoginForm extends React.Component {
     state = {
-        email: '',
-        password: ''
+        email: 'Shanna@melissa.tv',
+        password: 'anastasia.net'
     };
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
@@ -16,13 +16,14 @@ class LoginForm extends React.Component {
         loginUser(email, password);
     };
     render() {
+        const { email, password } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <input type="email" name="email" placeholder="Email" onChange={this.handleChange} />
+                    <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} />
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+                    <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} />
                 </div>
                 <button type="submit">Submit</button>
             </form>
