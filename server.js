@@ -2,7 +2,7 @@ const next = require('next');
 const express = require('express');
 
 const dev = process.env.NODE_ENV !== "production";
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const app = next({ dev });
 const handler = app.getRequestHandler();
 const axios = require('axios');
