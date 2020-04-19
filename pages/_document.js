@@ -4,8 +4,7 @@ import { getServerSideToken, getUserScript } from '../lib/auth';
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const props = await Document.getInitialProps(ctx);
-        const userData = await getServerSideToken(ctx.req);
-
+        const userData = await getServerSideToken(ctx);
         return { ...props, ...userData };
     }
     render() {
