@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children, auth }) => {
+    const { user = {} } = auth || {};
     return (
         <div className="root">
             <nav className="navbar">
-                <span>Welcome, <strong>Guest</strong></span>
+                <span>Welcomeeee, <strong>{user.name || "Guest"}</strong></span>
                 <div>
                     <Link href="/">
                         <a>HOME</a>
