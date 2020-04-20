@@ -4,7 +4,10 @@
   "description": "Cookie auth with nextjs",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "next build",
+    "heroku-postbuild": "next build"
   },
   "author": "Axel Obscura Sarzotti",
   "license": "ISC",
