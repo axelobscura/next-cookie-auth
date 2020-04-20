@@ -43,6 +43,10 @@ app.prepare().then(() => {
         res.cookie('token', userData, COOKIE_OPTIONS);
         res.json(userData);
     });
+    server.post('/api/logout', (req, res) => {
+        res.clearCookie('token', COOKIE_OPTIONS);
+        res.sendStatus(204);
+    })
     server.get('/api/profile', async (req, res) => {
         const { signedCookies = {} } = req;
         const { token } = signedCookies;
