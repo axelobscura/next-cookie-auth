@@ -5,18 +5,25 @@ const Layout = ({ title, children, auth }) => {
     return (
         <div className="root">
             <nav className="navbar">
-                <span>Welcomeeee, <strong>{user.name || "Guest"}</strong></span>
+                <span>Welcome, <strong>{user.name || "Visita"}</strong></span>
                 <div>
                     <Link href="/">
                         <a>HOME</a>
                     </Link>
-                    <Link href="/profile">
-                        <a>PROFILE</a>
-                    </Link>
-                    <button>LOGOUT</button>
-                    <Link href="/login">
-                        <a>LOGIN</a>
-                    </Link>
+                    {user.email ? (
+                        <>
+                            <Link href="/profile">
+                                <a>PROFILE</a>
+                            </Link>
+                            <button>LOGOUT</button>
+                        </>
+                    ) : (
+                            <>
+                                <Link href="/login">
+                                    <a>LOGIN</a>
+                                </Link>
+                            </>
+                        )}
                 </div>
             </nav>
             <h1>{title}</h1>
