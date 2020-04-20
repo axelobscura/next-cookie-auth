@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
     }
     render() {
         const { user = {} } = this.props;
-        console.log('angelitios' + this.props);
+        console.log('angelitios' + JSON.stringify(user));
         return (
             <html>
                 <Head />
